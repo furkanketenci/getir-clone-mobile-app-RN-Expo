@@ -2,9 +2,9 @@ import { StyleSheet, View, Text, Image } from 'react-native'
 import React from 'react'
 import { Entypo } from '@expo/vector-icons'
 
-export default function HeaderMain() {
+export default function HeaderTopArea() {
     return (
-        <View style={styles.headerMainContainer}>
+        <View style={styles.headerTopAreaContainer}>
             <View style={styles.firstArea}>
                 <Image
                     style={styles.houseImg}
@@ -26,7 +26,7 @@ export default function HeaderMain() {
 }
 
 const styles = StyleSheet.create({
-    headerMainContainer: {
+    headerTopAreaContainer: {
         flexDirection: "row",
         alignItems: "center",
         backgroundColor: "#facc15",
