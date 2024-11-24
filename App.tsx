@@ -1,21 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import HomeScreens from './src/screens/HomeScreens';
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView>
       <StatusBar style="dark" />
       <HomeScreens />
-    </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 60
-  },
-});
 
 // getirColor:"#5D38BE";
 // getirBG:"f5f5f5";
