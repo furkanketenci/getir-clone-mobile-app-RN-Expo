@@ -15,6 +15,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-// getirColor:"#5D38BE";
-// getirBG:"f5f5f5";
