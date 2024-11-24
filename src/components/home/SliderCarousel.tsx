@@ -1,41 +1,36 @@
-import React from 'react';
-import { View, FlatList, Image, Dimensions, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, Dimensions, StyleSheet } from 'react-native'
+import React from 'react'
 
-const { width } = Dimensions.get('window'); // Ekran genişliğini alıyoruz
+const sliderImagesDataPaths = [
+    require('../../../assets/sliderPhotos/firstSliderPhoto.jpg'),
+    require('../../../assets/sliderPhotos/secondSliderPhoto.jpg')
+]
 
-const images = [
-    require('../../../assets/2.jpg'),
-    require('../../../assets/4.jpg'),
-];
+const { width } = Dimensions.get('window');
 
-const SliderCarousel = () => {
+export default function SliderCarousel() {
+    const renderSliderImagesFunc = ({ item }: { item: number }) => {
+        return (
+            <Image style={styles.sliderImage} source={item} />
+        )
+    }
     return (
-        <View style={styles.container}>
+        <View>
             <FlatList
-                data={images}
-                horizontal // Yatay kaydırma
-                renderItem={({ item }) => (
-                    <Image source={item} style={styles.image} />
-                )}
-                keyExtractor={(item, index) => index.toString()}
-                showsHorizontalScrollIndicator={false} // Yatay scroll bar'ı gizle
-                pagingEnabled // Sayfa başına kaydırma
+                data={sliderImagesDataPaths}
+                renderItem={renderSliderImagesFunc}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                pagingEnabled={true}
             />
         </View>
-    );
-};
+    )
+}
 
 const styles = StyleSheet.create({
-    container: {
-        width: '100%',
-        height: 200, // Slider yüksekliği
-        overflow: 'hidden', // Taşan içeriği gizle
-    },
-    image: {
-        width: width, // Ekran genişliği kadar resim genişliği
-        height: 200, // Yükseklik, container'a uyacak şekilde
-        resizeMode: 'cover', // Resimleri kesmeden sığdır
-    },
-});
-
-export default SliderCarousel;
+    sliderImage: {
+        width: width,
+        resizeMode: "cover",
+        height: 200,
+    }
+})
