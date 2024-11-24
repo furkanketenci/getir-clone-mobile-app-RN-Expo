@@ -1,16 +1,20 @@
-import { StyleSheet, ScrollView } from 'react-native'
+import { StyleSheet, ScrollView, View } from 'react-native'
 import React from 'react'
-import HeaderMain from '../components/home/HeaderMain'
+import HeaderTopArea from '../components/home/HeaderTopArea'
 import SliderCarousel from '../components/home/SliderCarousel'
 import CategoryList from '../components/home/CategoryList'
 
 export default function HomeScreens() {
     return (
-        <ScrollView style={styles.homeScreensContainer}>
-            <HeaderMain />
-            <SliderCarousel />
-            <CategoryList />
-        </ScrollView>
+        <>
+            <View>
+                <HeaderTopArea />
+            </View>
+            <ScrollView style={styles.homeScreensContainer}>
+                <SliderCarousel />
+                <CategoryList />
+            </ScrollView>
+        </>
     )
 }
 
