@@ -1,6 +1,5 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreens from '../screens/HomeScreens';
 import SearchScreen from '../screens/SearchScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import GiftScreen from '../screens/GiftScreen';
@@ -29,35 +28,36 @@ export default function BottomNavigator() {
                 }}
             />
             <Tab.Screen
-                name="search"
-                // component={SearchScreen}
+                name="Search"
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Feather name="search" size={24} color={color} />
                     ),
                 }}
             >
-                {() => <StandartNavigator component={SearchScreen} name='search' logo />}
+                {() => <StandartNavigator component={SearchScreen} name='search' textTitle='Search' />}
             </Tab.Screen>
 
             <Tab.Screen
                 name="Profile"
-                component={ProfileScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <FontAwesome name="user" size={24} color={color} />
                     ),
                 }}
-            />
+            >
+                {() => <StandartNavigator component={ProfileScreen} name='profile' textTitle='Profile' />}
+            </Tab.Screen>
             <Tab.Screen
                 name="Gift"
-                component={GiftScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Feather name="gift" size={24} color={color} />
                     ),
                 }}
-            />
+            >
+                {() => <StandartNavigator component={GiftScreen} name='gift' textTitle='Gift' />}
+            </Tab.Screen>
         </Tab.Navigator>
     )
 }
