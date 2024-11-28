@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
-import BottomNavigator from './src/navigators/BottomNavigator';
 import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './src/navigators/AppNavigator';
 
 
 
@@ -10,7 +10,7 @@ export default function App() {
     <NavigationContainer >
       <View style={{ marginTop: 50 }}></View>
       <StatusBar style="auto" />
-      <BottomNavigator />
+      <AppNavigator />
     </NavigationContainer>
   );
 }
