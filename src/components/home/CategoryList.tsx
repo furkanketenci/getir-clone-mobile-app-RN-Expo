@@ -84,7 +84,7 @@ export default function CategoryList() {
             {
                 categoryImagesData.map((item, index) => {
                     return (
-                        <CategoryItem key={index} url={item.imageUrl} title={item.title} />
+                        <CategoryItem key={index} ctgItem={item} />
                     )
                 })
             }
