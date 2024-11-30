@@ -1,7 +1,8 @@
-import { Feather, Ionicons } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import HeaderBackLeft from './partials/HeaderBackLeft';
+import HeaderRightArea from './partials/HeaderRightArea';
 const Stack = createStackNavigator();
 
 interface IStandartNavigator {
@@ -26,13 +27,7 @@ export default function StandartNavigator({
                 options={{
                     headerStyle: { backgroundColor: "#5D38BE" },
                     headerLeft: () => (
-                        <TouchableOpacity onPress={() => {
-                            navigation.goBack();
-                        }}>
-                            <View style={{ marginLeft: 12 }}>
-                                <Ionicons name="chevron-back" size={19} color="white" />
-                            </View>
-                        </TouchableOpacity>
+                        <HeaderBackLeft />
                     ),
                     headerTitle: () => (
                         <View>
@@ -46,12 +41,7 @@ export default function StandartNavigator({
                         </View>
                     ),
                     headerRight: () => (
-                        <TouchableOpacity onPress={() => { navigation.navigate('Cart') }} >
-                            <View style={styles.headerRightWrapper}>
-                                <Feather name="shopping-bag" size={19} color="#fff" />
-                                <Text style={styles.cost}>{"\u20BA"}555</Text>
-                            </View>
-                        </TouchableOpacity>
+                        <HeaderRightArea />
                     )
                 }}
             />
