@@ -1,9 +1,12 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavigator from './BottomNavigator';
 import CartScreen from '../screens/CartScreen';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import StandartNavigator from './StandartNavigator';
 import CartNavigator from './CartNavigator';
+import CategoryDetailScreen from '../screens/CategoryDetailScreen';
+import HeaderBackLeft from './partials/HeaderBackLeft';
+import HeaderRightArea from './partials/HeaderRightArea';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +21,35 @@ export default function AppNavigator() {
             <Stack.Screen name="Cart">
 
                 {() => <CartNavigator />}
+            </Stack.Screen>
+
+            <Stack.Screen
+                name='CategoryDetailScreen'
+                component={CategoryDetailScreen}
+                options={{
+                    headerShown: true,
+                    headerStyle: { backgroundColor: "#5D38BE" },
+                    headerLeft: () => (
+                        <HeaderBackLeft />
+                    ),
+                    headerTitle: () => (
+                        <View>
+                            {
+                                <Image
+                                    style={{ resizeMode: "center" }}
+                                    source={require("../../assets/logo/logo.png")}
+                                />
+                            }
+
+                        </View>
+                    ),
+                    headerRight: () => (
+                        <HeaderRightArea />
+                    )
+                }}
+
+            >
+
             </Stack.Screen>
         </Stack.Navigator>
     )
