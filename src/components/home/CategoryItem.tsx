@@ -1,11 +1,24 @@
 import { TouchableOpacity, Image, StyleSheet, Dimensions, Text } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
-export default function CategoryItem({ url, title }: { url: number, title: string }) {
+export interface ICtgItem {
+    imageUrl: number;
+    title: string;
+}
+
+export default function CategoryItem({ ctgItem }: { ctgItem: ICtgItem }) {
+
+    const navigation = useNavigation();
+
+    const triggerOnPressFunc = () => {
+        navigation.navigate('CategoryDetailScreen', { ctgItem })
+    }
+
     return (
-        <TouchableOpacity style={styles.ctgItemContainer}>
-            <Image style={styles.categoryImage} source={url} />
-            <Text style={styles.categoryName}>{title}</Text>
+        <TouchableOpacity onPress={triggerOnPressFunc} style={styles.ctgItemContainer}>
+            <Image style={styles.categoryImage} source={ctgItem.imageUrl} />
+            <Text style={styles.categoryName}>{ctgItem.title}</Text>
         </TouchableOpacity>
     )
 }
