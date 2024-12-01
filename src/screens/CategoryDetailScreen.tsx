@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native';
-import { ICtgItem } from '../components/home/CategoryItem';
+import CategoryFilter from '../components/home/CategoryFilter';
+import { ICtgItem } from '../../types/categoryItemTypes';
 
 export default function CategoryDetailScreen() {
     const route = useRoute();
@@ -9,6 +10,7 @@ export default function CategoryDetailScreen() {
 
     return (
         <View>
+            <CategoryFilter />
             <Text>{params.ctgItem.title}</Text>
         </View>
     )
