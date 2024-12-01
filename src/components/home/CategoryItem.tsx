@@ -1,11 +1,7 @@
 import { TouchableOpacity, Image, StyleSheet, Dimensions, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
-
-export interface ICtgItem {
-    imageUrl: number;
-    title: string;
-}
+import { ICtgItem } from '../../../types/categoryItemTypes';
 
 export default function CategoryItem({ ctgItem }: { ctgItem: ICtgItem }) {
 
