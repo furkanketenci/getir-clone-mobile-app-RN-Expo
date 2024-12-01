@@ -1,8 +1,23 @@
-export const categoryImagesData = [
+export const categoriesData = [
     {
         imageUrl: require("../../assets/categories/1.png"),
         title: "İndirim",
-        id: 1
+        id: 1,
+        subCategory: [
+            {
+                id: "sub1",
+                title: "Yılbaşı Ürünleri"
+            },
+            {
+                id: "sub2",
+                title: "Maç Paketi"
+            },
+            {
+                id: "sub3",
+                title: "Sevgililer Günü"
+            },
+        ]
+
     },
     {
         imageUrl: require("../../assets/categories/2.png"),
