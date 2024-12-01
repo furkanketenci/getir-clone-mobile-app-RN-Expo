@@ -1,8 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomNavigator from './BottomNavigator';
-import CartScreen from '../screens/CartScreen';
-import { Image, Text, View } from 'react-native';
-import StandartNavigator from './StandartNavigator';
+import { Image, View } from 'react-native';
 import CartNavigator from './CartNavigator';
 import CategoryDetailScreen from '../screens/CategoryDetailScreen';
 import HeaderBackLeft from './partials/HeaderBackLeft';
@@ -49,7 +47,6 @@ export default function AppNavigator() {
                 }}
 
             >
-
             </Stack.Screen>
         </Stack.Navigator>
     )
