@@ -1,7 +1,7 @@
 import { StyleSheet, ScrollView } from 'react-native'
 import React, { useState } from 'react'
-import { categoryImagesData } from '../../data/categoryData'
 import CategoryBox from './CategoryBox'
+import { categoriesData } from '../../data/categoryData';
 
 export default function CategoryFilter() {
     const [selectedCategory, setSelectedCategory] = useState<number>();
@@ -12,7 +12,7 @@ export default function CategoryFilter() {
             horizontal
         >
             {
-                categoryImagesData.map((ctgItem) => (
+                categoriesData.map((ctgItem) => (
                     <CategoryBox
                         key={ctgItem.id}
                         categoriesData={ctgItem}
