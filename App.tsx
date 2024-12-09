@@ -1,16 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import AppNavigator from './src/navigators/AppNavigator';
-
-
+import BottomTabsNavigator from './src/navigator/bottomNavigatorArea/BottomTabsNavigator';
+import { SafeAreaView, StyleSheet } from 'react-native';
 
 export default function App() {
+
   return (
-    <NavigationContainer >
-      <View style={{ marginTop: 50 }}></View>
-      <StatusBar style="auto" />
-      <AppNavigator />
-    </NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <NavigationContainer>
+        <BottomTabsNavigator />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
