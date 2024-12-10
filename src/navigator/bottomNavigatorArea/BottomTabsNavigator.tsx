@@ -5,6 +5,7 @@ import SearchScreen from '../../../screens/bottomTabsScreens/SearchScreen';
 import ProfileScreen from '../../../screens/bottomTabsScreens/ProfileScreen';
 import GiftScreen from '../../../screens/bottomTabsScreens/GiftScreen';
 import { AntDesign, Entypo, Feather } from '@expo/vector-icons';
+import Colors from '../../../constants/Colors';
 
 export default function BottomTabsNavigator() {
     const Tab = createBottomTabNavigator();
@@ -12,8 +13,8 @@ export default function BottomTabsNavigator() {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: "#5D38BE",
-                tabBarInactiveTintColor: "gray",
+                tabBarActiveTintColor: Colors.getirColor,
+                tabBarInactiveTintColor: Colors.gray,
                 tabBarShowLabel: false
             }}
 
@@ -24,10 +25,9 @@ export default function BottomTabsNavigator() {
                         focused
                     }) => {
                         return (
-                            <Entypo name="home" size={24} color={focused ? "#5D38BE" : "gray"} />
+                            <Entypo name="home" size={24} color={focused ? Colors.getirColor : Colors.gray} />
                         )
                     }),
-                    tabBarActiveTintColor: "red"
                 }}
                 name="Home"
                 component={HomepageScreen}
@@ -36,7 +36,7 @@ export default function BottomTabsNavigator() {
                 options={{
                     tabBarIcon: (({ focused }) => {
                         return (
-                            <Feather name="search" size={24} color={focused ? "#5D38BE" : "gray"} />
+                            <Feather name="search" size={24} color={focused ? Colors.getirColor : Colors.gray} />
                         )
                     })
                 }}
@@ -47,7 +47,7 @@ export default function BottomTabsNavigator() {
                 options={{
                     tabBarIcon: (({ focused }) => {
                         return (
-                            <AntDesign name="user" size={24} color={focused ? "#5D38BE" : "gray"} />
+                            <AntDesign name="user" size={24} color={focused ? Colors.getirColor : Colors.gray} />
                         )
                     })
                 }}
@@ -60,7 +60,7 @@ export default function BottomTabsNavigator() {
                 options={{
                     tabBarIcon: (({ focused }) => {
                         return (
-                            <AntDesign name="gift" size={24} color={focused ? "#5D38BE" : "gray"} />
+                            <AntDesign name="gift" size={24} color={focused ? Colors.getirColor : Colors.gray} />
                         )
                     })
                 }}

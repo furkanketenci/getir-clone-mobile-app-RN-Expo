@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { Entypo } from '@expo/vector-icons'
+import Colors from '../../../constants/Colors'
 
 export default function HomepageHeader() {
     return (
@@ -15,7 +16,7 @@ export default function HomepageHeader() {
                         <Text style={styles.locationName}>EV</Text>
                         <Text style={styles.address}>Kurupelit Mahallesi Atakum / Samsun</Text>
                     </View>
-                    <Entypo name="chevron-small-right" size={18} color="#5D38BE" />
+                    <Entypo name="chevron-small-right" size={18} color={Colors.getirColor} />
                 </View>
                 <View style={styles.estArrivalTimeWrapper}>
                     <Text style={styles.arrivalTimeText}>TVS</Text>
@@ -58,8 +59,8 @@ const styles = StyleSheet.create({
         marginLeft: 3,
     },
     estArrivalTimeWrapper: {
-        backgroundColor: "#facc15",
-        color: "#5D38BE",
+        backgroundColor: Colors.getirYellow,
+        color: Colors.getirColor,
         width: "15%",
         justifyContent: "center",
         textAlign: "center",
@@ -68,12 +69,12 @@ const styles = StyleSheet.create({
     },
     arrivalTimeText: {
         fontSize: 11,
-        color: "#5D38BE",
+        color: Colors.getirColor,
         fontWeight: 500,
     },
     arrivalTimeMin: {
         fontSize: 15,
-        color: "#5D38BE",
+        color: Colors.getirColor,
         fontWeight: 500,
     }
 })
