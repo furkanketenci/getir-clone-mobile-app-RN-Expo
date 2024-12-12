@@ -1,11 +1,12 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomepageScreen from '../../../screens/bottomTabsScreens/HomepageScreen';
 import SearchScreen from '../../../screens/bottomTabsScreens/SearchScreen';
 import ProfileScreen from '../../../screens/bottomTabsScreens/ProfileScreen';
 import GiftScreen from '../../../screens/bottomTabsScreens/GiftScreen';
 import { AntDesign, Entypo, Feather } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
+import HomepageStackNavigator from '../stackNavigatorArea/HomepageStackNavigator';
+import GeneralStackNavigator from '../stackNavigatorArea/GeneralStackNavigator';
 
 export default function BottomTabsNavigator() {
     const Tab = createBottomTabNavigator();
@@ -30,7 +31,7 @@ export default function BottomTabsNavigator() {
                     }),
                 }}
                 name="Home"
-                component={HomepageScreen}
+                component={HomepageStackNavigator}
             />
             <Tab.Screen
                 options={{
@@ -41,8 +42,15 @@ export default function BottomTabsNavigator() {
                     })
                 }}
                 name="Search"
-                component={SearchScreen}
-            />
+            >
+                {
+                    () =>
+                        <GeneralStackNavigator
+                            componentName={SearchScreen}
+                            name='Search'
+                        />
+                }
+            </Tab.Screen>
             <Tab.Screen
                 options={{
                     tabBarIcon: (({ focused }) => {
@@ -52,11 +60,17 @@ export default function BottomTabsNavigator() {
                     })
                 }}
                 name="Profile"
-                component={ProfileScreen}
-            />
+            >
+                {
+                    () =>
+                        <GeneralStackNavigator
+                            componentName={ProfileScreen}
+                            name='Profile'
+                        />
+                }
+            </Tab.Screen>
             <Tab.Screen
                 name="Gift"
-                component={GiftScreen}
                 options={{
                     tabBarIcon: (({ focused }) => {
                         return (
@@ -64,7 +78,15 @@ export default function BottomTabsNavigator() {
                         )
                     })
                 }}
-            />
+            >
+                {
+                    () =>
+                        <GeneralStackNavigator
+                            componentName={GiftScreen}
+                            name='Gift'
+                        />
+                }
+            </Tab.Screen>
         </Tab.Navigator>
     )
 }
