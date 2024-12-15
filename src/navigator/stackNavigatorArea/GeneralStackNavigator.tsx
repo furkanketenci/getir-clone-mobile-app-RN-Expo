@@ -43,10 +43,12 @@ export default function GeneralStackNavigator({
                         </TouchableOpacity>
                     )),
                     headerRight: (() => (
-                        <View style={styles.rightAreaContainer}>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate("Cart")}
+                            style={styles.rightAreaContainer}>
                             <Ionicons style={styles.bagIcon} name="bag-handle-sharp" size={22} color="#fff" />
                             <Text style={styles.amount}>{"\u20BA"}1928</Text>
-                        </View>
+                        </TouchableOpacity>
                     )),
                 }}
             />
