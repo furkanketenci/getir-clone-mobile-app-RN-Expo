@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { categoriesData } from '../../../../data/categoryData';
 import HomepageCategoryBox from './HomepageCategoryBox';
