@@ -6,6 +6,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Colors from '../../../constants/Colors';
+import CategoryDetailScreen from '../../../screens/category/CategoryDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,7 @@ export default function MainStackNavigator() {
                     ),
                 }}
             />
+            <Stack.Screen name='CategoryDetail' component={CategoryDetailScreen} />
         </Stack.Navigator>
     )
 }
