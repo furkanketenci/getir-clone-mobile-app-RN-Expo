@@ -7,7 +7,7 @@ export default function HomepageCategoryArea() {
     return (
         <View style={styles.homepageCtgContainer}>
             {
-                categoriesData.map((ctg) => (
+                categoriesData.filter((ctg) => ctg.topId === 0).map((ctg) => (
                     <HomepageCategoryBox key={ctg.id} categoryData={ctg} />
                 ))
             }
