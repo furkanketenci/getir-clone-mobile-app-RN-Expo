@@ -1,17 +1,14 @@
 import { Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ICategoryData } from '../categoryHomepage/HomepageCategoryBox'
+import Colors from '../../../../../constants/Colors';
 
-export default function CategoryBox({ item, params }: { item: ICategoryData, params: ICategoryData }) {
-    const routeID = params.id;
-    const activeBoxID = item.id;
-    const findedActiveCategoryBox = routeID === activeBoxID;
+export default function CategoryBox({ item, activeCategoryBox, selectedTopFilterFunc }: { item: ICategoryData; activeCategoryBox: boolean; selectedTopFilterFunc: any }) {
+
     return (
-        <>
-            <TouchableOpacity style={findedActiveCategoryBox ? styles.activeFilterBox : styles.categoryBox}>
-                <Text style={styles.categoryTitle}>{item.title}</Text>
-            </TouchableOpacity>
-        </>
+        <TouchableOpacity onPress={() => { selectedTopFilterFunc(item) }} style={activeCategoryBox ? styles.activeFilterBox : styles.categoryBox}>
+            <Text style={styles.categoryTitle}>{item.title}</Text>
+        </TouchableOpacity>
     )
 }
 
@@ -26,11 +23,11 @@ const styles = StyleSheet.create({
     },
     activeFilterBox: {
         color: "#fff",
-        backgroundColor: "#0c0c0c",
+        backgroundColor: Colors.getirColor,
         height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: 80,
+        width: 95,
     }
 })
