@@ -5,7 +5,7 @@ import Colors from '../../../../../constants/Colors'
 import CategoryBox from './CategoryBox'
 import { ICategoryData } from '../categoryHomepage/HomepageCategoryBox'
 
-export default function CategoryTopFilterBox({ aboutSelectedFilterData, selectedTopFilterFunc }: { aboutSelectedFilterData: ICategoryData; selectedTopFilterFunc: any }) {
+export default function CategoryTopFilterBox({ aboutSelectedFilterData, selectedTopFilterFunc }: { aboutSelectedFilterData: ICategoryData; selectedTopFilterFunc: (selectedCategory: ICategoryData) => void; }) {
     return (
         <FlatList
             style={styles.ctgFilterBoxContainer}

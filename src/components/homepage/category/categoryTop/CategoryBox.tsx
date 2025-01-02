@@ -3,7 +3,7 @@ import React from 'react'
 import { ICategoryData } from '../categoryHomepage/HomepageCategoryBox'
 import Colors from '../../../../../constants/Colors';
 
-export default function CategoryBox({ item, activeCategoryBox, selectedTopFilterFunc }: { item: ICategoryData; activeCategoryBox: boolean; selectedTopFilterFunc: any }) {
+export default function CategoryBox({ item, activeCategoryBox, selectedTopFilterFunc }: { item: ICategoryData; activeCategoryBox: boolean; selectedTopFilterFunc: (selectedCategory: ICategoryData) => void; }) {
 
     return (
         <TouchableOpacity onPress={() => { selectedTopFilterFunc(item) }} style={activeCategoryBox ? styles.activeFilterBox : styles.categoryBox}>
