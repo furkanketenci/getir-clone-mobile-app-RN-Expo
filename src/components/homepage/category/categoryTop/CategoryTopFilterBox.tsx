@@ -9,7 +9,7 @@ export default function CategoryTopFilterBox({ paramsInfo }: { paramsInfo: ICate
     return (
         <FlatList
             style={styles.ctgFilterBoxContainer}
-            data={categoriesData}
+            data={categoriesData.filter((item) => item.topId === 0)}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             renderItem={({ item }) => (
